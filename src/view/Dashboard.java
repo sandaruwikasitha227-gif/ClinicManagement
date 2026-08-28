@@ -247,18 +247,18 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnNewAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewAppointmentActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Appointment Registration module will be opened here."
-);
+         RegisterAppointment form =
+            new RegisterAppointment();
+
+    form.setVisible(true);
     }//GEN-LAST:event_btnNewAppointmentActionPerformed
 
     private void btnSearchAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAppointmentActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Appointment Search module will be opened here."
-);
+    AppointmentDetails form =
+            new AppointmentDetails();
+
+    form.setVisible(true);
     }//GEN-LAST:event_btnSearchAppointmentActionPerformed
 
     private void btnBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillingActionPerformed

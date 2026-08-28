@@ -99,7 +99,6 @@ public class PatientManagement extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Patients");
-        setPreferredSize(new java.awt.Dimension(1070, 600));
         setSize(new java.awt.Dimension(1070, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -137,7 +136,7 @@ public class PatientManagement extends javax.swing.JFrame {
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 196, 282, -1));
         getContentPane().add(txtDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 236, 282, -1));
 
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gender", "Male", "Female", " " }));
+        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gender", "Male", "Female", "Other", " " }));
         getContentPane().add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 276, 282, -1));
 
         btnSave.setBackground(new java.awt.Color(204, 255, 204));
