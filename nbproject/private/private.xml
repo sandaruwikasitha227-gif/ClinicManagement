@@ -3,17 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/DentistDAO.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/User.java</file>
-            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/Login.java</file>
-            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/Patient.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/PatientDAO.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/db/TestConnection.java</file>
-            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/UserDAO.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/TreatmentDAO.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/util/Session.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/AppointmentDetails.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/Billing.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/Dashboard.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/PatientManagement.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/Login.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/Patient.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/RegisterAppointment.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/AppointmentDAO.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/DentistManagement.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/dao/UserDAO.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/Dentist.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/Appointment.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/db/DBConnection.java</file>
             <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/clinicmanagement/Main.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/model/Treatment.java</file>
+            <file>file:/C:/Users/Vikasitha/OneDrive/Documents/NetBeansProjects/ClinicManagement/src/view/TreatmentManagement.java</file>
         </group>
     </open-files>
 </project-private>

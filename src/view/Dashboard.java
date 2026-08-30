@@ -263,26 +263,26 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillingActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Billing module will be opened here."
-);
+    Billing billing =
+            new Billing();
+
+    billing.setVisible(true);
     }//GEN-LAST:event_btnBillingActionPerformed
 
     private void btnDentistsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDentistsActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Dentist Management module will be opened here."
-);
+    DentistManagement form =
+            new DentistManagement();
+
+    form.setVisible(true);
     }//GEN-LAST:event_btnDentistsActionPerformed
 
     private void btnTreatmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTreatmentsActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Treatment Management module will be opened here."
-);
+    TreatmentManagement form =
+            new TreatmentManagement();
+
+    form.setVisible(true);
     }//GEN-LAST:event_btnTreatmentsActionPerformed
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed

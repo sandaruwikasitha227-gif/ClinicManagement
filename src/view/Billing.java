@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+import java.awt.Image;
+
 /**
  *
  * @author Vikasitha
@@ -15,7 +18,27 @@ public class Billing extends javax.swing.JFrame {
      */
     public Billing() {
         initComponents();
+            ImageIcon originalIcon = new ImageIcon(getClass().getResource("/view/dental7.jpeg"));
+    Image scaledImage = originalIcon.getImage().getScaledInstance(1060, 610, Image.SCALE_SMOOTH);
+    jLabel13.setIcon(new ImageIcon(scaledImage));
+    
+    setResizable(false);
+    pack();
+    setLocationRelativeTo(null);
     }
+    
+    private void clearBill() {
+
+    lblPatient.setText("-");
+    lblAddress.setText("-");
+    lblContact.setText("-");
+    lblDentist.setText("-");
+    lblTreatment.setText("-");
+    lblDate.setText("-");
+    lblConsultation.setText("-");
+    lblTreatmentCost.setText("-");
+    lblTotal.setText("-");
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,8 +52,8 @@ public class Billing extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtAppointmentNumber = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -39,117 +62,353 @@ public class Billing extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        btnPrint = new javax.swing.JButton();
+        lblPatient = new javax.swing.JTextField();
+        lblAddress = new javax.swing.JTextField();
+        lblContact = new javax.swing.JTextField();
+        lblDentist = new javax.swing.JTextField();
+        lblTreatment = new javax.swing.JTextField();
+        lblDate = new javax.swing.JTextField();
+        lblConsultation = new javax.swing.JTextField();
+        lblTreatmentCost = new javax.swing.JTextField();
+        lblTotal = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Sunrise Dental Clinic");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 16, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Patient Bill");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Appointment No :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 139, 171, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(204, 0, 51));
+        txtAppointmentNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtAppointmentNumber.setForeground(new java.awt.Color(204, 0, 51));
+        getContentPane().add(txtAppointmentNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 136, 324, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("SEARCH");
+        btnSearch.setBackground(new java.awt.Color(204, 255, 204));
+        btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSearch.setText("SEARCH");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(707, 136, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Patient :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 202, 136, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Address :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 240, 136, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Contact :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 278, 136, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Dentist :");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 316, 136, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Treatment :");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 354, 136, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Date :");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 392, 136, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Consultation Fee :");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 436, 136, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Treatment Cost :");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 474, 136, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(355, 355, 355))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(459, 459, 459))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 253, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(50, 50, 50)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setText("Total :");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 518, 136, -1));
+
+        btnPrint.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPrint.setForeground(new java.awt.Color(51, 0, 204));
+        btnPrint.setText("PRINT BILL");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 559, -1, -1));
+
+        lblPatient.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPatient.setText("                                -");
+        getContentPane().add(lblPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 199, 278, -1));
+
+        lblAddress.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAddress.setText("                                -");
+        getContentPane().add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 237, 278, -1));
+
+        lblContact.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblContact.setText("                                -");
+        getContentPane().add(lblContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 275, 278, -1));
+
+        lblDentist.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDentist.setText("                                -");
+        getContentPane().add(lblDentist, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 313, 278, -1));
+
+        lblTreatment.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTreatment.setText("                                -");
+        getContentPane().add(lblTreatment, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 351, 278, -1));
+
+        lblDate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDate.setText("                                -");
+        getContentPane().add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 389, 278, -1));
+
+        lblConsultation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConsultation.setForeground(new java.awt.Color(51, 0, 204));
+        lblConsultation.setText("                                -");
+        lblConsultation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblConsultationActionPerformed(evt);
+            }
+        });
+        getContentPane().add(lblConsultation, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 433, 278, -1));
+
+        lblTreatmentCost.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTreatmentCost.setForeground(new java.awt.Color(51, 0, 204));
+        lblTreatmentCost.setText("                                -");
+        getContentPane().add(lblTreatmentCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 471, 278, -1));
+
+        lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(204, 0, 0));
+        lblTotal.setText("                                -");
+        getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 515, 278, -1));
+
+        btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 0, 0));
+        btnClear.setText("CLEAR");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 559, 109, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dental7.jpeg"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -4, 1060, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+        // TODO add your handling code here:
+            String bill =
+            "========================================\n"
+            + "        SUNRISE DENTAL CLINIC\n"
+            + "              PATIENT BILL\n"
+            + "========================================\n\n"
+            + "Appointment No: "
+            + txtAppointmentNumber.getText()
+            + "\n\n"
+            + "Patient:        "
+            + lblPatient.getText()
+            + "\n"
+            + "Address:        "
+            + lblAddress.getText()
+            + "\n"
+            + "Contact:        "
+            + lblContact.getText()
+            + "\n"
+            + "Dentist:        "
+            + lblDentist.getText()
+            + "\n"
+            + "Treatment:      "
+            + lblTreatment.getText()
+            + "\n"
+            + "Date:           "
+            + lblDate.getText()
+            + "\n\n"
+            + "Consultation:   "
+            + lblConsultation.getText()
+            + "\n"
+            + "Treatment Cost: "
+            + lblTreatmentCost.getText()
+            + "\n"
+            + "----------------------------------------\n"
+            + "TOTAL:          "
+            + lblTotal.getText()
+            + "\n"
+            + "========================================\n"
+            + "        Thank you for visiting!\n"
+            + "========================================";
+
+    javax.swing.JTextArea textArea =
+            new javax.swing.JTextArea(bill);
+
+    textArea.setFont(
+            new java.awt.Font(
+                    "Monospaced",
+                    java.awt.Font.PLAIN,
+                    12
+            )
+    );
+
+    try {
+
+        boolean complete =
+                textArea.print();
+
+        if (complete) {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Bill printed successfully!",
+                    "Print",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE
+            );
+
+        } else {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Printing was cancelled.",
+                    "Print",
+                    javax.swing.JOptionPane.WARNING_MESSAGE
+            );
+        }
+
+    } catch (java.awt.print.PrinterException e) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Printing error:\n" + e.getMessage(),
+                "Print Error",
+                javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+    }
+    }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void lblConsultationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblConsultationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblConsultationActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+            String appointmentNumber =
+            txtAppointmentNumber.getText().trim();
+
+    if (appointmentNumber.isEmpty()) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Please enter an appointment number.",
+                "Validation",
+                javax.swing.JOptionPane.WARNING_MESSAGE
+        );
+
+        return;
+    }
+
+    dao.AppointmentDAO appointmentDAO =
+            new dao.AppointmentDAO();
+
+    try {
+
+        java.sql.ResultSet rs =
+                appointmentDAO.searchAppointment(
+                        appointmentNumber
+                );
+
+        if (rs != null && rs.next()) {
+
+            lblPatient.setText(
+                    rs.getString("patient_name")
+            );
+
+            lblAddress.setText(
+                    rs.getString("address")
+            );
+
+            lblContact.setText(
+                    rs.getString("contact_number")
+            );
+
+            lblDentist.setText(
+                    rs.getString("dentist_name")
+            );
+
+            lblTreatment.setText(
+                    rs.getString("treatment_name")
+            );
+
+            lblDate.setText(
+                    rs.getString("appointment_date")
+            );
+
+            lblConsultation.setText(
+                    String.format(
+                            "Rs. %.2f",
+                            rs.getDouble("consultation_fee")
+                    )
+            );
+
+            lblTreatmentCost.setText(
+                    String.format(
+                            "Rs. %.2f",
+                            rs.getDouble("treatment_cost")
+                    )
+            );
+
+            lblTotal.setText(
+                    String.format(
+                            "Rs. %.2f",
+                            rs.getDouble("total_amount")
+                    )
+            );
+
+        } else {
+
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Appointment not found.",
+                    "Search Result",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE
+            );
+
+            clearBill();
+        }
+
+    } catch (Exception e) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Unable to load bill.\n"
+                + e.getMessage(),
+                "Database Error",
+                javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+    }
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+            txtAppointmentNumber.setText("");
+
+    clearBill();
+
+    txtAppointmentNumber.requestFocus();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,10 +446,14 @@ public class Billing extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnPrint;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -199,6 +462,15 @@ public class Billing extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField lblAddress;
+    private javax.swing.JTextField lblConsultation;
+    private javax.swing.JTextField lblContact;
+    private javax.swing.JTextField lblDate;
+    private javax.swing.JTextField lblDentist;
+    private javax.swing.JTextField lblPatient;
+    private javax.swing.JTextField lblTotal;
+    private javax.swing.JTextField lblTreatment;
+    private javax.swing.JTextField lblTreatmentCost;
+    private javax.swing.JTextField txtAppointmentNumber;
     // End of variables declaration//GEN-END:variables
 }
