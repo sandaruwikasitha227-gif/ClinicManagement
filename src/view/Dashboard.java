@@ -287,18 +287,20 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Reports module will be opened here."
-);
+    Reports reports =
+            new Reports();
+
+    reports.setLocationRelativeTo(this);
+    reports.setVisible(true);
     }//GEN-LAST:event_btnReportsActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(
-        this,
-        "Help module will be opened here."
-);
+    Help help =
+            new Help();
+
+    help.setLocationRelativeTo(this);
+    help.setVisible(true);
     }//GEN-LAST:event_btnHelpActionPerformed
 
     /**

@@ -162,4 +162,51 @@ public class AppointmentDAO {
         return null;
     }
 }
+    
+    public ResultSet getAppointmentDetails(String appointmentNumber) {
+
+    String sql =
+        "SELECT " +
+        "a.appointment_number, " +
+        "p.patient_name, " +
+        "p.address, " +
+        "p.contact_number, " +
+        "d.dentist_name, " +
+        "t.treatment_name, " +
+        "a.appointment_date, " +
+        "a.appointment_time, " +
+        "a.status, " +
+        "a.consultation_fee, " +
+        "a.total_amount " +
+        "FROM appointments a " +
+        "INNER JOIN patients p " +
+        "ON a.patient_id = p.patient_id " +
+        "INNER JOIN dentists d " +
+        "ON a.dentist_id = d.dentist_id " +
+        "INNER JOIN treatments t " +
+        "ON a.treatment_id = t.treatment_id " +
+        "WHERE a.appointment_number = ?";
+
+    try {
+
+        Connection con =
+                DBConnection.getConnection();
+
+        PreparedStatement pst =
+                con.prepareStatement(sql);
+
+        pst.setString(1, appointmentNumber);
+
+        return pst.executeQuery();
+
+    } catch (Exception e) {
+
+        System.out.println(
+                "Appointment Search Error: "
+                + e.getMessage()
+        );
+
+        return null;
+    }
+}
 }

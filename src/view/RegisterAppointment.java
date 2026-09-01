@@ -490,15 +490,38 @@ public class RegisterAppointment extends javax.swing.JFrame {
                 javax.swing.JOptionPane.WARNING_MESSAGE
         );
 
-    } catch (Exception e) {
+} catch (Exception e) {
+
+    String message = e.getMessage();
+
+    if (message != null &&
+        message.contains("already booked")) {
 
         javax.swing.JOptionPane.showMessageDialog(
                 this,
-                "Error: " + e.getMessage(),
-                "System Error",
+                "This dentist is already booked for "
+                + "the selected date and time.\n\n"
+                + "Please choose another time or dentist.",
+                "Appointment Conflict",
+                javax.swing.JOptionPane.WARNING_MESSAGE
+        );
+
+    } else {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "Unable to save appointment.\n\n"
+                + "Please try again.",
+                "Database Error",
                 javax.swing.JOptionPane.ERROR_MESSAGE
         );
+
+        System.out.println(
+                "Appointment Error: "
+                + e.getMessage()
+        );
     }
+}
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
