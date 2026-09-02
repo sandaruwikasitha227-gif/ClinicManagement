@@ -19,6 +19,26 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+if (util.Session.isLoggedIn()) {
+
+    model.User user = util.Session.getCurrentUser();
+
+    if (user != null
+            && user.getRole() != null
+            && user.getRole().trim().equalsIgnoreCase("ADMIN")) {
+
+        btnUserManagement.setVisible(true);
+
+    } else {
+
+        btnUserManagement.setVisible(false);
+    }
+
+} else {
+
+    btnUserManagement.setVisible(false);
+}
+        
         loadUserDetails();
         ImageIcon originalIcon = new ImageIcon(getClass().getResource("/view/dental4.jpg"));
         Image scaledImage = originalIcon.getImage().getScaledInstance(1060, 610, Image.SCALE_SMOOTH);
@@ -68,6 +88,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnHelp = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        btnUserManagement = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,7 +204,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, 210, 40));
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 210, 40));
 
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnExit.setText("Exit");
@@ -193,7 +214,17 @@ public class Dashboard extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 480, 210, 40));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 210, 40));
+
+        btnUserManagement.setBackground(new java.awt.Color(153, 255, 204));
+        btnUserManagement.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnUserManagement.setText("Manage Users");
+        btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserManagementActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUserManagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, 130, 50));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dental4.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 610));
@@ -303,6 +334,46 @@ public class Dashboard extends javax.swing.JFrame {
     help.setVisible(true);
     }//GEN-LAST:event_btnHelpActionPerformed
 
+    private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
+        // TODO add your handling code here:
+    if (!util.Session.isLoggedIn()) {
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Please login first.",
+                "Access Denied",
+                JOptionPane.WARNING_MESSAGE
+        );
+
+        return;
+    }
+
+    model.User user = util.Session.getCurrentUser();
+
+    if (user == null
+            || user.getRole() == null
+            || !user.getRole()
+                    .trim()
+                    .equalsIgnoreCase("ADMIN")) {
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Access denied. Only administrators "
+                + "can manage users.",
+                "Access Denied",
+                JOptionPane.WARNING_MESSAGE
+        );
+
+        return;
+    }
+
+    UserManagement userManagement =
+            new UserManagement();
+
+    userManagement.setLocationRelativeTo(this);
+    userManagement.setVisible(true);
+    }//GEN-LAST:event_btnUserManagementActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +420,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnReports;
     private javax.swing.JButton btnSearchAppointment;
     private javax.swing.JButton btnTreatments;
+    private javax.swing.JButton btnUserManagement;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

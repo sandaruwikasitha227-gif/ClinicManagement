@@ -17,8 +17,7 @@ public class Reports extends javax.swing.JFrame {
      * Creates new form Reports
      */
     public Reports() {
-        initComponents();
-            initComponents();
+    initComponents();
     
     ImageIcon originalIcon = new ImageIcon(getClass().getResource("/view/dental11.jpeg"));
     Image scaledImage = originalIcon.getImage().getScaledInstance(1060, 610, Image.SCALE_SMOOTH);
